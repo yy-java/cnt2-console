@@ -22,15 +22,13 @@
 
 ### 启动Console
 
-	使用ES6 + vue.js + iview实现，使用ajax请求调用httpserver的api接口。属于一个静态项目，output/文件夹即是整个项目内容，可以使用apache,tomcat,nginx来部署。
+使用ES6 + vue.js + iview实现，使用ajax请求调用httpserver的api接口。属于一个静态项目，output/文件夹即是整个项目内容，可以使用apache,tomcat,nginx来部署。
 
-	```
-		注意：打开output/assets/js/index-{random}.js文件，找到"http://cnt2-api.yourcompany.com"和"http://cnt2-api-test.yourcompany.com"处，修改为你的httpserver测试环境地址和正式环境地址，httpserver默认端口号是8081!
-	```
-	
- 
- 
-
+```	
+注意：打开output/assets/js/index-{random}.js文件，
+找到"http://cnt2-api.yourcompany.com"和"http://cnt2-api-test.yourcompany.com"，
+修改为你的httpserver测试环境地址和正式环境地址，httpserver默认端口号是8081。
+```
 
  
 
