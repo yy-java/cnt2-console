@@ -11,11 +11,11 @@
 
 ## 管理后台预览
 
-![structure](https://github.com/yy-java/cnt2/statics/app.png)
-![structure](https://github.com/yy-java/cnt2/statics/profiles.png)
-![structure](https://github.com/yy-java/cnt2/statics/profile.png)
-![structure](https://github.com/yy-java/cnt2/statics/history.png)
-![structure](https://github.com/yy-java/cnt2/statics/publish.png)
+![structure](https://github.com/yy-java/cnt2/tree/master/statics/app.png)
+![structure](https://github.com/yy-java/cnt2/tree/master/statics/profiles.png)
+![structure](https://github.com/yy-java/cnt2/tree/master/statics/profile.png)
+![structure](https://github.com/yy-java/cnt2/tree/master/statics/history.png)
+![structure](https://github.com/yy-java/cnt2/tree/master/statics/publish.png)
 
 
 ## 开始
