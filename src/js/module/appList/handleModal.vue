@@ -98,11 +98,6 @@
         this.type = 2;
       },
       submitData(name) {
-        // var keys=['app','name','charger','chargerUid'];
-        // if(!Check.validateFormData(this.formData,keys)){
-        //     this.$Message.error('选项不能为空');
-        //     return;
-        // }
         this.$refs[name].validate((valid) => {
             if (valid) {
                 const self = this;

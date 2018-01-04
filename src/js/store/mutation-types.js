@@ -1,3 +1,4 @@
+export const GET_USER_LIST = 'GET_USER_LIST'; // 获取用户列表
 export const GET_LIST = 'GET_LIST'; // 获取导航列表
 export const GET_PROFILE_LIST = 'GET_PROFILE_LIST'; // 获取profile列表
 export const GET_CONFIG_KV_LIST = 'GET_CONFIG_KV_LIST'; // 获取配置列表

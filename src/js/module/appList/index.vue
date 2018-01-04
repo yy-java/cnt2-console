@@ -12,7 +12,6 @@
   import Api from 'common/api';
   import HandleModal from './handleModal.vue';
   import AuthModal from './userAuth.vue';
-
   export default {
     name: 'AppList',
     data() {
@@ -126,7 +125,7 @@
                   },
                   on: {
                     click: () => {
-                      window.location.href='#/profiles/'+param.row.app;
+                        window.location.href='#/profiles/'+param.row.app;
                     },
                   },
                 }, '进入配置'),
@@ -140,7 +139,7 @@
     },
     components: {
       HandleModal,
-      AuthModal
+      AuthModal,
     },
     computed: {
       tableData() {
@@ -148,10 +147,8 @@
       },
     },
     mounted() {
-      const self = this;    
+       const self = this;
        self.$store.dispatch('getTableList');
-         
-      
     },
     methods: {
       authList(app){
@@ -169,7 +166,6 @@
                       onOk: () => {
                           Api.delApp(id).done((res) =>{
                             if(res.code==0){
-                              // alert("删除成功");
                               this.$Message.success('删除成功');
                               this.$store.dispatch('getTableList');  
                             }else{
@@ -181,8 +177,6 @@
                          
                       }
                   });
-
-       
       }
       
     },

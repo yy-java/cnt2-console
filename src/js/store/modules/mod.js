@@ -6,6 +6,7 @@ const states = {
   currentUid:'',
   tableList: [],
   profileMsg:{},
+  userList:[],
   configKVList:[],//全部配置内容
   waitApproveConfig:[],//待审核
   waitPublishConfig:[],//待发布
@@ -30,7 +31,21 @@ const actions = {
       });
     });
   },
-
+  
+ getUserList({
+                 commit,
+               },callback){
+       Api.userList().done(
+       (res) => {
+	       commit(types.GET_USER_LIST, {
+	        data: res.data,
+	        code:res.code,
+	        msg:res.msg,
+          callback:callback
+	      })
+    });    
+  },
+  
   getProfileList({
                  commit,
                },callback){
@@ -45,6 +60,7 @@ const actions = {
 	      })
     });    
   },
+  
     getConfigList({
                  commit,
                }) {
@@ -80,7 +96,10 @@ const mutations = {
     const nowState = state;
     nowState.tableList = data.list;
   },
-  
+  [types.GET_USER_LIST](state, info) {
+    const nowState = state;
+    nowState.userList = info.data;
+  },
 
   [types.GET_PROFILE_LIST](state, info) {
     const nowState = state;

@@ -1,4 +1,3 @@
-
 <template>
   <div class="layout">
     <div class="layout-ceiling">
@@ -7,6 +6,9 @@
       </div>
       <div class="layout-ceiling-main" style='color:white'>
          {{getUsername()}}  <a  @click="signOut">【退出】</a>
+      </div>
+       <div class="layout-ceiling-main mgmtUser" :style='displayStyle'>
+         <a  @click="mgmtUser">【管理用户】</a>
       </div>
     </div>
     <div class="content">
@@ -17,33 +19,41 @@
 <script>
 var Util = require('../lib/util');
 import APi from 'common/api';
-
 export default {
     name: 'app',
+    data() {
+      return {
+      	displayStyle: function(){
+      	  if(Util.getCookie("isAdmin") == "true"){
+        	return "display:block";
+        }
+        return "display:none";
+        }(),
+      }
+    },
     methods: {
       getUsername(){
       	  this.$Message.config({top: 100})
-          this.$store.state.MOD.currentUid=Util.getCookie("yyuid");
+          this.$store.state.MOD.currentUid=Util.getCookie("uid");
           return Util.getCookie("username");
       },
       signOut(){
           APi.logOut().done((res)=>{
-
-            Util.clearCookie();
-             location.reload();
-           });
+				window.location.reload();
+          });
+      },
+      mgmtUser(){
+          location.href='#/userlist';
       },
     }
 };
 
 </script>
 
-
 <style lang="scss">
   .content {
     padding: 10px;
   }
-
   .layout {
     border: 1px solid #d7dde4;
     background: #f5f7f9;

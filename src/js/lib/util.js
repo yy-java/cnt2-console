@@ -29,7 +29,8 @@ var setCookie = function (key, value, options) {
   }
 };
 var clearCookie = function () {
-      document.cookie="username=;expires=0;domain=xx.com;";
+      document.cookie="username=;expires=0;domain=yourcompany.com;";
+      document.cookie="uid=;expires=0;domain=yourcompany.com;";
 };
 var isEmbed = (function() {
 

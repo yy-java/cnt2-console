@@ -36,10 +36,13 @@ if (isIE()) {
   	alert('不支持当前浏览器，请使用谷歌浏览器、360浏览器、QQ浏览器'); // eslint-disable-line
   	location.href = 'http://se.360.cn/';
 } else if (!User.isLogin()) {
-  	User.showLoginBox(location.href.replace(/#.*$/,''));
-} else {
-  	init();
+  	var url = location.href;
+  	if(url.indexOf("#/login") == -1){
+  		window.location.href=url.replace(/#.*/,"")+"#/login"
+  	}
 }
+init();
+
  Date.prototype.Format = function(fmt)
 	{ //author: meizz
 	  var o = {
